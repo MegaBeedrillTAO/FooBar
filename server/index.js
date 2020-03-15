@@ -8,19 +8,19 @@ const {getNums} = require('./controller.js')
 
 app.use(express.json());
 
-massive(CONNECTION_STRING).then(dbInst => {
-    app.set("db", dbInst);
-    console.log('Connected to Database');
-})
+// massive(CONNECTION_STRING).then(dbInst => {
+//     app.set("db", dbInst);
+//     console.log('Connected to Database');
+// })
 
-app.use(session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24
-    }
-}))
+// app.use(session({
+//     secret: SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//         maxAge: 1000 * 60 * 60 * 24
+//     }
+// }))
 
 app.get('/api/nums', getNums)
 
