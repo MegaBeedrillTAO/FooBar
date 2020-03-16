@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
-const massive = require('massive');
-const session = require('express-session');
+const cors = require('cors')
+//const massive = require('massive');
+//const session = require('express-session');
 require('dotenv').config();
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 const {getNums} = require('./controller.js')
 
-app.use(express.json());
+app.use(cors());
 
 // massive(CONNECTION_STRING).then(dbInst => {
 //     app.set("db", dbInst);
